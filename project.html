@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(2, 13, 51);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            background-color: rgb(24, 17, 233);
+        }
+
+        nav .right {
+            margin-right: -100px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(200, 228, 251);
+            font-size: 1.06rem;
+        }
+
+        nav ul li a.active {
+            color: #e8ebee;
+            border-bottom: 3px solid #dde7f0;
+            padding-bottom: 20px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .left a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .left a:hover {
+            color: rgb(200, 228, 251);
+            font-size: 1.7rem;
+        }
+
+        nav ul li a.active {
+            color: #e8ebee;
+            border-bottom: 3px solid #dde7f0;
+            padding-bottom: 20px;
+        }
+
+        .pic {
+            display: flex;
+            align-items: center;
+            margin: 0 -160px;
+        }
+
+        .navpic {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 17px;
+            margin-left: -11px;
+        }
+
+        footer {
+            background-color: #0a0a20;
+        }
+
+        .footer {
+            display: flex;
+            color: rgb(250, 247, 247);
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+
+        .footer-third a {
+            text-decoration: none;
+        }
+
+        .footer-second a {
+            text-decoration: none;
+        }
+
+        .footer-fourth a {
+            text-decoration: none;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        .footer-rights {
+            text-align: center;
+            color: grey;
+            padding: 12px 0;
+        }
+
+        .links a {
+            color: white;
+            font-size: .9rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            position: relative;
+            margin-top: 15px;
+            transform: translateY(8px);
+        }
+
+        .links a:hover {
+            color: #007bff;
+        }
+
+        .footer-link {
+            margin-bottom: 10px;
+        }
+
+        .projectA {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .firstSection {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 50px 30px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .img-profile{
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #30363d;
+        }
+
+        .profileinfo h1 {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .profileinfo p {
+            font-size: 0.95rem;
+            color: #8b949e;
+            max-width: 650px;
+            margin: 0 auto 25px auto;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #21262d;
+            color: #58a6ff;
+            padding: 12px 28px;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #30363d;
+        }
+
+        .secondSection {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 50px 30px;
+        }
+
+        .sectionheader {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sectionheader h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+            color: #ffffff;
+        }
+
+        .sectionheader p {
+            font-size: 0.95rem;
+            color: #8b949e;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        .projectsgrid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .project {
+            background-color: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .project p {
+            font-size: 0.85rem;
+            color: #8b949e;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .view-more {
+            color: #58a6ff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .view-more:hover {
+            text-decoration: underline;
+        }
+
+        .more-projects-container {
+            text-align: center;
+        }
+
+        .more-btn {
+            background-color: #21262d;
+            color: #58a6ff;
+        }
+
+        @media screen and (max-width: 1260px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 10px;
+            }
+
+            nav .right {
+                margin-right: 0;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .pic {
+                margin: 0;
+                justify-content: center;
+            }
+
+            .footer {
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .footer>div {
+                width: 100%;
+            }
+
+            .projectA {
+                padding: 20px 10px;
+            }
+
+            .firstSection {
+                padding: 30px 15px;
+            }
+
+            .profileinfo h1 {
+                font-size: 1.8rem;
+            }
+
+            .secondSection {
+                padding: 30px 15px;
+            }
+
+            .sectionheader h2 {
+                font-size: 1.6rem;
+            }
+
+            .projectsgrid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .project {
+                width: 100%;
+                margin-bottom: 0;
+            }
+
+            .project img {
+                height: 180px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"><a href="index.html">Puskar's Protfolio</a></div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="project.html" class="active">Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="pic">
+                <a href="me.png" target="_blank">
+                    <img src="me.png" alt="Puskar" class="navpic">
+                </a>
+
+            </div>
+        </nav>
+    </header>
+    <main class="projectA">
+
+
+        <section class="firstSection">
+            <div class="img-profile">
+                <img src="me.png" alt="Profile Picture" class="profile-img">
+            </div>
+            <div class="profileinfo">
+                <h1>Puskar Gayen</h1>
+                <p>Hi! I'm a Fresh Web Developer working in Websites. Right now, I'm deep into building logic-heavy
+                    Python applications, experimenting with new tools, and constantly leveling up my software
+                    development skills.
+                    my latest projects and case studies.</p>
+                <div class="buttons">
+                    <a href="Puskar.png" class="btn">View Resume &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+
+        
+        
+        
+        <section class="secondSection">
+            <div class="sectionheader">
+                <h2>Featured Projects</h2>
+                <p>Passionate about software development and continuous learning. Currently working on Python projects,
+                    mastering software concepts, and building tools that actually solve problems.</p>
+            </div>
+
+            <div class="projectsgrid">
+
+                <div class="project">
+
+
+                    <img src="project1.png" alt="Trading App">
+                    <h3>Online Shopping System</h3>
+                    <p>Built a streamlined Online Shopping System that manages product catalogs, user shopping carts,
+                        and order processing with clean, scalable code.</p>
+
+                </div>
+
+
+                <div class="project">
+                    <img src="project2.png" alt="Browser Extension">
+                    <h3>Browser Extension</h3>
+                    <p>Built a custom Browser Extension that automates everyday browser tasks and enhances web
+                        productivity with lightweight, clean code.</p>
+
+                </div>
+
+
+                <div class="project">
+                    <img src="project3.png" alt="Data Analytics App">
+                    <h3>Data Analytics App</h3>
+                    <p>Built an intuitive Data Analytics App that processes raw datasets to generate real-time insights,
+                        interactive charts, and actionable metrics.</p>
+
+                </div>
+            </div>
+
+
+        </section>
+    </main>
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Puskar's Developer Portfolio</h3>
+            </div>
+             <div class="footer-second">
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li><a href="#">FeedBack</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li class="footer-link"><a href="#">Follows Us</a></li>
+                </ul>
+                <div class="links">
+                    <a href="https://www.facebook.com/share/1FRaZRv61a/" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/itz_puskar__?srtk=MWVjeDcyYWU5dWdpcg==" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/Puskar-Gayen" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/916290733877" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer-rights">
+            Copyright &#169;puskarsportfolio.com | All rights reserved
+
+        </div>
+    </footer>
+
+</body>
+
+</html>

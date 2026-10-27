@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(2, 13, 51);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            background-color: rgb(24, 17, 233);
+        }
+
+        nav .right {
+            margin-right: -100px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+            color: rgb(200, 228, 251);
+            font-size: 1.06rem;
+        }
+
+        nav ul li a.active {
+            color: #e8ebee;
+            border-bottom: 3px solid #dde7f0;
+            padding-bottom: 20px;
+        }
+
+        .left {
+            font-size: 1.5rem;
+        }
+
+        .left a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .left a:hover {
+            color: rgb(200, 228, 251);
+            font-size: 1.7rem;
+        }
+
+        nav ul li a.active {
+            color: #e8ebee;
+            border-bottom: 3px solid #dde7f0;
+            padding-bottom: 20px;
+        }
+
+        .pic {
+            display: flex;
+            align-items: center;
+            margin: 0 -160px;
+        }
+
+        .navpic {
+            width: 40px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 17px;
+            margin-left: -11px;
+        }
+
+        footer {
+            background-color: #0a0a20;
+        }
+
+        .footer {
+            display: flex;
+            color: rgb(250, 247, 247);
+            padding: 23px 122px;
+            justify-content: space-evenly;
+        }
+
+        .footer ul {
+            list-style: none;
+        }
+        .footer-third a{
+           text-decoration: none;
+        }
+        .footer-second a{
+            text-decoration: none;
+        }
+        .footer-fourth a{
+            text-decoration: none;
+        }
+
+        .footer>div {
+            width: 223px;
+        }
+
+        .footer-rights {
+            text-align: center;
+            color: grey;
+            padding: 12px 0;
+        }
+
+        .links a {
+            color: white;
+            font-size: .9rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+            position: relative;
+            margin-top: 15px;
+            transform: translateY(8px);
+        }
+
+        .links a:hover {
+            color: #007bff;
+        }
+
+        .footer-link {
+            margin-bottom: 10px;
+        }
+
+        .contact {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .contactheader {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .contactheader h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #665c5c;
+        }
+
+        .contactC {
+            display: flex;
+            justify-content: space-between;
+            gap: 60px;
+        }
+
+        .contactinfo {
+            flex: 1;
+        }
+
+        .contactinfo h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #665c5c;
+        }
+
+        .info-block {
+            margin-bottom: 25px;
+        }
+
+        .info-block h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #665c5c;
+            margin-bottom: 5px;
+        }
+
+        .info-block p {
+            font-size: 0.92rem;
+            color: #555555;
+            line-height: 1.5;
+        }
+
+        .info-block a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .info-block a:hover {
+            text-decoration: underline;
+        }
+        .contactwrapper {
+            flex: 1;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .formnote {
+            font-size: 0.85rem;
+            color: #666666;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #333333;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dcdcdc;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            background-color: #fff;
+            color: #333;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #007bff;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 0.85rem;
+            color: #555555;
+        }
+
+        .form-checkbox input {
+            margin-top: 3px;
+        }
+
+        .form-checkbox a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #007bff;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+
+        @media screen and (max-width: 900px) {
+             nav {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 10px;
+            }
+
+            nav .right {
+                margin-right: 0;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .pic {
+                margin: 0;
+                justify-content: center;
+            }
+            .contactC {
+                flex-direction: column;
+                gap: 40px;
+            }
+             .footer {
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                gap: 25px;
+            }
+
+            .footer>div {
+                width: 100%;
+            }
+
+            .project-page {
+                padding: 20px 10px;
+            }
+
+            .firstSection {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left"><a href="index.html">Puskar's Protfolio</a></div>
+
+            <div class="right">
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="pic">
+                <a href="me.png" target="_blank">
+                    <img src="me.png" alt="Puskar" class="navpic">
+                </a>
+
+            </div>
+        </nav>
+    </header>
+    <main class="contact">
+        <div class="contactheader">
+            <h1>Got a Project? Let's Talk</h1>
+        </div>
+
+        <div class="contactC">
+            <div class="contactinfo">
+                <h2>Ask how can I help you:</h2>
+
+                <div class="info-block">
+                    <h3>See My Work in Action</h3>
+                    <p>Check out my projects to see how I translate ideas into working applications, clean code, and interactive web tools.</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Continuous Learning</h3>
+                    <p>Always exploring new libraries, experimenting with logic-heavy code, and improving my web development skills step by step.</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Let's Connect</h3>
+                    <p>Whether you want to discuss a new tech project, share coding tips, or talk about web development, my inbox is always open!</p>
+                </div>
+
+                <h2>Points of Contact</h2>
+                <div class="info-block">
+                    <h3>India | Kolkata</h3>
+                    <p>Kolkata, West Bengal 700104</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Information</h3>
+                    <p><a href="www.portfolio.com">www.portfolio.com</a></p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Support</h3>
+                    <p><a href="www.support@.com">www.support@.com</a></p>
+                </div>
+            </div>
+
+            
+            <div class="contactwrapper">
+                <p class="formnote">Please note: all fields are required.</p>
+                <form class="contactform">
+                    
+                    <div class="form-group">
+                        <label>Company Name:</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Company Email</label>
+                        <input type="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Job Title:</label>
+                        <input type="text" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Country:</label>
+                        <select required>
+                            <option value="">Select:</option>
+                            <option value="usa">United States</option>
+                            <option value="india">India</option>
+                            <option value="germany">Germany</option>
+                            <option value="germany">China</option>
+                            <option value="germany">USA</option>
+                            <option value="germany">Japan</option>
+                            <option value="germany">australia</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Business Type:</label>
+                        <select required>
+                            <option value="">Select:</option>
+                            <option value="agency">Freelancer</option>
+                            <option value="advertiser">Advertiser</option>
+                            <option value="publisher">Publisher</option>
+                            <option value="publisher">Marketing</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Comments</label>
+                        <textarea rows="4" required></textarea>
+                    </div>
+
+                    <div class="form-checkbox">
+                        <input type="checkbox" id="privacy" required>
+                        <label for="privacy">I agree to let Puskar contact me back regarding this message.
+                            <a href="#">privacy policy</a>.</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+
+
+    <footer>
+        <div class="footer">
+            <div class="footer-first">
+                <h3>Puskar's Developer Portfolio</h3>
+            </div>
+            <div class="footer-second">
+                <ul>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="project.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-third">
+                <ul>
+                    <li><a href="#">FeedBack</a></li>
+                    <li><a href="#">Terms & Condition</a></li>
+                    <li><a href="#">Privacy policy</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-fourth">
+                <ul>
+                    <li class="footer-link"><a href="#">Follows Us</a></li>
+                </ul>
+                <div class="links">
+                    <a href="https://www.facebook.com/share/1FRaZRv61a/" target="_blank">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/itz_puskar__?srtk=MWVjeDcyYWU5dWdpcg==" target="_blank">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/Puskar-Gayen" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://wa.me/916290733877" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="footer-rights">
+            Copyright &#169;puskarsportfolio.com | All rights reserved
+
+        </div>
+    </footer>
+
+</body>
+
+</html>
